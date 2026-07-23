@@ -7,12 +7,10 @@ import { getWhatsAppLink } from "@/lib/whatsapp";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Dr. Sadia Ghufran — MBBS, MCPS, PMDC Verified Pediatrician with 10 years of experience in Karachi.",
+    "Learn about Dr. Sadia Ghufran — MBBS, MCPS, PMDC Verified Pediatrician with 15 years of experience in Karachi.",
 };
 
 export default function AboutPage() {
-  const fgClinic = clinics[1];
-
   return (
     <>
       {/* Header Banner */}
@@ -26,13 +24,13 @@ export default function AboutPage() {
             className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
             style={{ background: '#FAEEDA', color: '#854F0B', border: '1px solid #F7E2B9' }}
           >
-            Child Specialist &amp; Pediatric Surgeon
+            Child Specialist &amp; Pediatrician
           </span>
           <h1 className="mt-4 font-serif text-4xl font-extrabold tracking-tight text-headline sm:text-5xl lg:text-6xl">
             About {siteConfig.doctorName}
           </h1>
           <p className="mt-4 text-lg text-secondary-text max-w-xl mx-auto">
-            10+ years of dedicated, compassionate pediatric care for children across Gulistan-e-Johar &amp; Karachi.
+            15+ years of dedicated, compassionate pediatric care for children across Gulistan-e-Johar &amp; Karachi.
           </p>
           <div className="mx-auto mt-6 h-1 w-16 rounded-full" style={{ background: '#185FA5' }} />
         </div>
@@ -102,33 +100,47 @@ export default function AboutPage() {
           <div className="mt-6 rounded-3xl border border-card-border bg-white p-8 shadow-warm-md">
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary-light font-bold text-sm text-primary">
-                10+
+                15+
               </span>
               <div>
                 <h3 className="font-serif text-lg font-bold text-headline">
-                  Pediatric Surgical &amp; Clinical Care
+                  Pediatric Care
                 </h3>
-                <p className="text-sm font-medium text-primary">{fgClinic.name}</p>
+                <p className="text-sm font-medium text-primary">Consultation Locations</p>
               </div>
             </div>
-            <p className="mt-4 text-sm text-secondary-text leading-relaxed">
-              {fgClinic.address}
-            </p>
-            {fgClinic.mapsLink && (
-              <div className="mt-6">
-                <Link
-                  href={fgClinic.mapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-card-border bg-bg-sage px-5 py-2.5 text-xs font-semibold text-headline transition-all hover:bg-primary hover:border-primary hover:text-white"
-                >
-                  <svg className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
-                  </svg>
-                  <span>Open Clinic Location in Maps</span>
-                </Link>
-              </div>
-            )}
+            <div className="mt-6 space-y-6">
+              {clinics.map((clinic) => (
+                <div key={clinic.name} className="rounded-2xl border border-card-border bg-bg-sage/50 p-6">
+                  <h4 className="font-serif text-base font-bold text-headline">
+                    {clinic.name}
+                  </h4>
+                  <p className="mt-1 text-sm text-secondary-text">
+                    {clinic.area} &middot; {clinic.days.join(", ")} &middot; {clinic.hours}
+                  </p>
+                  {clinic.address && (
+                    <p className="mt-2 text-sm text-secondary-text leading-relaxed">
+                      {clinic.address}
+                    </p>
+                  )}
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {clinic.mapsLink && (
+                      <Link
+                        href={clinic.mapsLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-card-border bg-white px-4 py-2 text-xs font-semibold text-headline transition-all hover:bg-primary hover:border-primary hover:text-white"
+                      >
+                        <svg className="h-3.5 w-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+                        </svg>
+                        Open in Maps
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

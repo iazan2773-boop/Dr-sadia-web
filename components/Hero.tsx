@@ -23,7 +23,7 @@ export default function Hero() {
               style={{ background: '#FAEEDA', color: '#854F0B', border: '1px solid #F7E2B9' }}
             >
               <span className="flex h-2 w-2 rounded-full" style={{ background: '#854F0B' }} />
-              <span>PMDC Verified &bull; 10+ Years Dedicated Care</span>
+              <span>PMDC Verified &bull; 15+ Years Dedicated Care</span>
             </div>
 
             {/* Doctor's Name */}
@@ -45,7 +45,7 @@ export default function Hero() {
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-headline">
               {[
                 "MBBS, MCPS Specialist",
-                "Pediatric Surgical Care",
+                "Pediatric Care",
                 "2 Clinic Locations",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
@@ -89,7 +89,7 @@ export default function Hero() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/dr-sadia.png"
-                alt="Dr. Sadia Ghufran — Child Specialist & Pediatric Surgeon"
+                alt="Dr. Sadia Ghufran — Child Specialist & Pediatrician"
                 className="relative z-10 w-full max-w-[17rem] sm:max-w-[20rem] lg:max-w-[24rem] object-contain mb-4"
                 style={{ mixBlendMode: "multiply" }}
               />
@@ -104,7 +104,7 @@ export default function Hero() {
                   <svg className="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
-                  10+ Years Experience
+                  15+ Years Experience
                 </div>
 
                 {/* Badge 2 */}

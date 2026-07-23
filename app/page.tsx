@@ -62,7 +62,7 @@ export default function HomePage() {
                 Conditions Treated
               </h2>
               <p className="mt-3 text-base sm:text-lg text-secondary-text max-w-xl">
-                Expert medical care and surgical management for pediatric health conditions.
+                Expert medical care for pediatric health conditions.
               </p>
             </div>
 

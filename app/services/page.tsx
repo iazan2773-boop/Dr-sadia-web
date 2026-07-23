@@ -24,13 +24,13 @@ export default function ServicesPage() {
             className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider"
             style={{ background: '#FAEEDA', color: '#854F0B', border: '1px solid #F7E2B9' }}
           >
-            Pediatric &amp; Surgical Care
+            Pediatric &amp; Medical Care
           </span>
           <h1 className="mt-4 font-serif text-4xl font-extrabold tracking-tight text-headline sm:text-5xl lg:text-6xl">
             Medical Services &amp; Conditions
           </h1>
           <p className="mt-4 text-lg text-secondary-text">
-            Comprehensive medical and surgical pediatric management for infants, toddlers, and young adolescents.
+            Comprehensive medical pediatric management for infants, toddlers, and young adolescents.
           </p>
           <div className="mx-auto mt-6 h-1 w-16 rounded-full" style={{ background: '#185FA5' }} />
         </div>
@@ -60,7 +60,7 @@ export default function ServicesPage() {
                   {featuredService}
                 </h2>
                 <p className="mt-2 text-base text-secondary-text leading-relaxed">
-                  Specialized evaluation, diagnosis, and surgical management for pediatric birth defects and congenital conditions with compassionate care.
+                  Specialized evaluation, diagnosis, and management for pediatric birth defects and congenital conditions with compassionate care.
                 </p>
                 <div className="mt-6">
                   <Link

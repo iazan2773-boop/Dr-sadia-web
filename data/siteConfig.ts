@@ -9,9 +9,9 @@ export const siteConfig = {
     "MBBS",
     "MCPS",
     "PMDC Verified",
-    "10 Years Experience",
+    "15 Years Experience",
     "Best Pediatrician in Karachi",
   ],
   meriSehatLink: "https://merisehat.pk/doctor/karachi/pediatrician/dr-sadia-ghufran/312118",
-  bio: "Dr. Sadia Ghufran is a skilled Pediatrician with an MBBS degree and an MCPS qualification, bringing 10 years of experience in pediatric surgical care. She is PMDC Verified and widely recognized as the Best Pediatrician in Karachi.",
+  bio: "Dr. Sadia Ghufran is a skilled Pediatrician with an MBBS degree and an MCPS qualification, bringing 15 years of experience in pediatric care. She is PMDC Verified and widely recognized as the Best Pediatrician in Karachi.",
 } as const;

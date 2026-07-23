@@ -31,7 +31,7 @@ export default function Footer() {
                 PMDC Verified
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider" style={{ background: '#FAEEDA', color: '#854F0B', border: '1px solid #F7E2B9' }}>
-                10+ Years Experience
+                15+ Years Experience
               </span>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-card-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-secondary-text">
           <p>&copy; {year} {siteConfig.doctorName}. All rights reserved.</p>
-          <p className="font-bold uppercase tracking-wider" style={{ color: '#854F0B' }}>Child Specialist & Pediatric Surgeon</p>
+          <p className="font-bold uppercase tracking-wider" style={{ color: '#854F0B' }}>Child Specialist & Pediatrician</p>
         </div>
       </div>
     </footer>
