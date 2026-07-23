@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Primary Blue Palette */
+  --color-primary: #185FA5;           /* blue-600: main buttons, active nav, icons, links */
+  --color-primary-hover: #0C447C;     /* blue-800: hover & active states */
+  --color-headline: #042C53;          /* blue-900: headlines, doctor name, main title text */
+  --color-primary-light: #EBF3FA;     /* soft blue tint: icon containers */
+  --color-primary-border: #CBE0F3;    /* light blue border for interactive elements */
+
+  /* Accent Amber Badge Palette */
+  --color-badge-bg: #FAEEDA;          /* amber-50: badge background */
+  --color-badge-text: #854F0B;        /* amber-800: badge text */
+  --color-badge-border: #F7E2B9;      /* subtle amber badge border */
+
+  /* Body & Background Colors */
+  --color-secondary-text: #475569;    /* slate-600: secondary/supporting body copy */
+  --color-surface: #ffffff;
+  --color-bg-sage: #F7FAF6;           /* soft off-white/sage section background */
+  --color-border: #E2E8F0;
+  --color-card-border: #E4EBE2;       /* subtle card border matching sage tint */
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-secondary-text);
+    background-color: var(--color-bg-sage);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    color: var(--color-headline);
+  }
+}
+
+@layer utilities {
+  /* Backgrounds */
+  .bg-primary { background-color: var(--color-primary); }
+  .bg-primary-hover { background-color: var(--color-primary-hover); }
+  .bg-primary-light { background-color: var(--color-primary-light); }
+  .bg-badge-bg { background-color: var(--color-badge-bg); }
+  .bg-bg-sage { background-color: var(--color-bg-sage); }
+  .bg-warm-gradient {
+    background: linear-gradient(145deg, #F7FAF6 0%, #EEF4ED 100%);
+  }
+  .bg-warm-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+  }
+  .bg-dot-grid {
+    background-image: radial-gradient(#185FA5 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.08;
+  }
+
+  /* Text */
+  .text-primary { color: var(--color-primary); }
+  .text-headline { color: var(--color-headline); }
+  .text-secondary-text { color: var(--color-secondary-text); }
+  .text-badge-text { color: var(--color-badge-text); }
+
+  /* Borders */
+  .border-primary { border-color: var(--color-primary); }
+  .border-badge-border { border-color: var(--color-badge-border); }
+  .border-card-border { border-color: var(--color-card-border); }
+  .border-border { border-color: var(--color-border); }
+
+  /* Hover states */
+  .hover\:bg-primary-hover:hover { background-color: var(--color-primary-hover); }
+  .hover\:bg-primary:hover { background-color: var(--color-primary); }
+  .hover\:bg-primary-light:hover { background-color: var(--color-primary-light); }
+  .hover\:bg-bg-sage:hover { background-color: var(--color-bg-sage); }
+  .hover\:text-primary:hover { color: var(--color-primary); }
+  .hover\:text-headline:hover { color: var(--color-headline); }
+  .hover\:border-primary:hover { border-color: var(--color-primary); }
+
+  /* Opacity variants */
+  .bg-primary\/10 { background-color: color-mix(in srgb, var(--color-primary) 10%, transparent); }
+  .bg-primary\/20 { background-color: color-mix(in srgb, var(--color-primary) 20%, transparent); }
+  .bg-primary\/40 { background-color: color-mix(in srgb, var(--color-primary) 40%, transparent); }
+  .border-primary\/40 { border-color: color-mix(in srgb, var(--color-primary) 40%, transparent); }
+  .border-primary\/50 { border-color: color-mix(in srgb, var(--color-primary) 50%, transparent); }
+  .hover\:border-primary\/50:hover { border-color: color-mix(in srgb, var(--color-primary) 50%, transparent); }
+
+  /* Shadows */
+  .shadow-warm-sm {
+    box-shadow: 0 4px 14px -2px rgba(4, 44, 83, 0.05), 0 2px 6px -1px rgba(24, 95, 165, 0.03);
+  }
+  .shadow-warm-md {
+    box-shadow: 0 10px 25px -5px rgba(4, 44, 83, 0.08), 0 4px 12px -2px rgba(24, 95, 165, 0.04);
+  }
+  .shadow-warm-lg {
+    box-shadow: 0 20px 35px -10px rgba(4, 44, 83, 0.12), 0 8px 16px -4px rgba(24, 95, 165, 0.08);
+  }
+  .shadow-accent-glow {
+    box-shadow: 0 8px 24px -4px rgba(24, 95, 165, 0.35);
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-12px) scale(1.03); }
+}
+
+@keyframes softPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-float      { animation: float 4s ease-in-out infinite; }
+.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+.animate-soft-pulse { animation: softPulse 5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
